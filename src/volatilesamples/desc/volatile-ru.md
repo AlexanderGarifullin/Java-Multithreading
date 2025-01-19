@@ -124,3 +124,34 @@ public class BadCode {
 Однако, оно не заменяет синхронизацию для сложных операций. Используйте volatile, когда нужно гарантировать,
 что изменения переменной будут немедленно видны другим потокам, но для атомарных операций или сложных сценариев лучше
 использовать другие механизмы синхронизации.
+
+## Вывод в консоль:
+### BadCode
+```text
+BadCode
+Increment i to 1
+Increment i to 2
+Increment i to 3
+Increment i to 4
+Increment i to 5
+Finished MyThreadWriter
+
+```
+
+### GoodCode
+```text
+GoodCode
+Increment i to 1
+Increment i to 2
+New value of i is 2
+Increment i to 3
+New value of i is 3
+New value of i is 4
+Increment i to 4
+New value of i is 5
+Increment i to 5
+Finished MyThreadRead
+Finished MyThreadWriter
+
+Process finished with exit code 0
+```
